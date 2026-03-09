@@ -3,7 +3,7 @@ import { BestDeals } from "@/components/BestDeals";
 import { PricesTable } from "@/components/PricesTable";
 import { Toaster } from "@/components/ui/sonner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { LayoutGrid, Leaf, ShoppingBasket, Tag } from "lucide-react";
+import { LayoutGrid, ShoppingBasket, Tag, Utensils } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
@@ -29,9 +29,9 @@ const tabs: { value: TabValue; label: string; icon: React.ReactNode }[] = [
 
 const tabDescriptions: Record<TabValue, string> = {
   prices:
-    "Compare prices across all stores — find where each item is cheapest.",
-  deals: "The absolute best price available for every item, right now.",
-  basket: "Pick your groceries and find which store gives you the best total.",
+    "Compare food prices across Zomato, Swiggy, Domino's, EatSure, and Uber Eats.",
+  deals: "The cheapest platform for every dish, right now.",
+  basket: "Pick your order and find which app gives you the best total.",
 };
 
 export default function App() {
@@ -45,14 +45,14 @@ export default function App() {
       <header className="sticky top-0 z-30 border-b border-border bg-background/90 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center gap-3">
           <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-primary text-primary-foreground shrink-0">
-            <Leaf className="w-5 h-5" />
+            <Utensils className="w-5 h-5" />
           </div>
           <div>
             <h1 className="font-display font-bold text-xl text-foreground leading-none">
-              FreshPrice
+              FoodDeal
             </h1>
             <p className="text-xs text-muted-foreground mt-0.5">
-              Smart grocery price comparison
+              Compare food prices across delivery apps
             </p>
           </div>
         </div>
@@ -148,9 +148,9 @@ export default function App() {
       <footer className="border-t border-border py-5 mt-auto">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-            <Leaf className="w-3.5 h-3.5 text-primary/60" />
-            <span className="font-medium text-foreground/80">FreshPrice</span>
-            <span>— Know before you go.</span>
+            <Utensils className="w-3.5 h-3.5 text-primary/60" />
+            <span className="font-medium text-foreground/80">FoodDeal</span>
+            <span>— Order smart, save more.</span>
           </div>
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()}.{" "}

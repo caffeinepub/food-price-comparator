@@ -82,7 +82,7 @@ export function BestDeals() {
               <div className="flex items-center gap-1.5 mb-1">
                 <Tag className="w-3.5 h-3.5 text-primary opacity-70 shrink-0" />
                 <p className="text-xs text-muted-foreground uppercase tracking-wide font-medium">
-                  Best price
+                  Cheapest on
                 </p>
               </div>
               <h3 className="font-display font-semibold text-foreground text-lg leading-tight truncate">
@@ -100,7 +100,7 @@ export function BestDeals() {
             </div>
             <div className="shrink-0 text-right">
               <span className="font-display font-bold text-2xl text-primary tabular-nums">
-                ${deal.price.toFixed(2)}
+                ₹{deal.price.toFixed(2)}
               </span>
             </div>
           </div>

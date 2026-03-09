@@ -100,7 +100,7 @@ export function BasketBuilder() {
             data-ocid="basket.empty_state"
             className="p-8 text-center text-muted-foreground"
           >
-            <span className="text-3xl">🛒</span>
+            <span className="text-3xl">🍔</span>
             <p className="mt-2">No items available.</p>
           </div>
         ) : (
@@ -151,12 +151,12 @@ export function BasketBuilder() {
         {basketMutation.isPending ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Finding best store…
+            Finding best app…
           </>
         ) : (
           <>
             <Sparkles className="mr-2 h-4 w-4" />
-            Find Best Store
+            Find Best App
             {selectedIds.size > 0 && (
               <span className="ml-2 text-primary-foreground/70">
                 ({selectedIds.size} item{selectedIds.size !== 1 ? "s" : ""})
@@ -173,7 +173,7 @@ export function BasketBuilder() {
         >
           <Loader2 className="w-4 h-4 animate-spin text-primary" />
           <span className="text-sm text-muted-foreground">
-            Comparing prices across stores…
+            Comparing prices across apps…
           </span>
         </div>
       )}
@@ -211,7 +211,7 @@ export function BasketBuilder() {
                 <div className="flex items-center gap-2 mb-1">
                   <Trophy className="w-4 h-4" />
                   <span className="text-sm font-medium opacity-90 uppercase tracking-wide">
-                    Best Store
+                    Best App
                   </span>
                 </div>
                 <h3 className="font-display font-bold text-2xl mb-2">
@@ -219,7 +219,7 @@ export function BasketBuilder() {
                 </h3>
                 <div className="flex items-baseline gap-2">
                   <span className="font-display font-bold text-4xl tabular-nums">
-                    ${result.bestTotal.toFixed(2)}
+                    ₹{result.bestTotal.toFixed(2)}
                   </span>
                   <span className="text-primary-foreground/70 text-sm">
                     total
@@ -228,19 +228,19 @@ export function BasketBuilder() {
                 {savings > 0.005 && (
                   <div className="mt-3 inline-flex items-center gap-1.5 bg-white/20 rounded-full px-3 py-1 text-sm font-semibold">
                     <ChevronDown className="w-3.5 h-3.5" />
-                    Save ${savings.toFixed(2)} vs. most expensive option
+                    Save ₹{savings.toFixed(2)} vs. most expensive option
                   </div>
                 )}
               </div>
             </motion.div>
 
-            {/* Store rankings */}
+            {/* App rankings */}
             <div className="bg-card border border-border rounded-xl overflow-hidden">
               <div className="px-5 py-3 border-b border-border bg-muted/30">
                 <div className="flex items-center gap-2">
                   <StoreIcon className="w-4 h-4 text-primary" />
                   <span className="font-display font-semibold text-sm text-foreground">
-                    All Stores Ranked
+                    All Apps Ranked
                   </span>
                 </div>
               </div>
@@ -275,7 +275,7 @@ export function BasketBuilder() {
                         )}
                       </span>
 
-                      {/* Store name + bar */}
+                      {/* App name + bar */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-1.5">
                           <span
@@ -294,7 +294,7 @@ export function BasketBuilder() {
                                 : "text-foreground text-base"
                             }`}
                           >
-                            ${total.toFixed(2)}
+                            ₹{total.toFixed(2)}
                           </span>
                         </div>
                         <div className="h-1.5 rounded-full bg-muted overflow-hidden">
@@ -317,7 +317,7 @@ export function BasketBuilder() {
                         <div className="shrink-0 flex items-center gap-0.5 text-xs text-muted-foreground">
                           <ChevronUp className="w-3 h-3 text-destructive/70" />
                           <span className="tabular-nums text-destructive/80 font-medium">
-                            +${(total - result.bestTotal).toFixed(2)}
+                            +₹{(total - result.bestTotal).toFixed(2)}
                           </span>
                         </div>
                       )}

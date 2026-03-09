@@ -66,7 +66,7 @@ export function PricesTable() {
         data-ocid="prices.empty_state"
         className="flex flex-col items-center justify-center p-12 text-muted-foreground"
       >
-        <span className="text-4xl mb-3">🛒</span>
+        <span className="text-4xl mb-3">🍔</span>
         <p className="font-medium">No price data available yet.</p>
       </div>
     );
@@ -82,7 +82,7 @@ export function PricesTable() {
       <div className="flex items-center gap-2 px-5 py-3 bg-muted/50 border-b border-border">
         <TrendingDown className="w-4 h-4 text-primary" />
         <span className="text-sm font-medium text-muted-foreground">
-          Green cells = cheapest price for that item
+          Green cells = cheapest platform for that dish
         </span>
       </div>
       <div className="overflow-x-auto">
@@ -138,7 +138,7 @@ export function PricesTable() {
                             {best && (
                               <TrendingDown className="w-3 h-3 text-success-muted-foreground" />
                             )}
-                            ${price.toFixed(2)}
+                            ₹{price.toFixed(2)}
                           </span>
                         ) : (
                           <span className="text-muted-foreground/40">—</span>
