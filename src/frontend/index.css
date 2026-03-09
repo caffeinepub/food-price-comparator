@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree[wght].woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Background: warm off-white with slight warmth */
+    --background: 0.975 0.008 95;
+    --foreground: 0.18 0.03 145;
+
+    /* Card: clean white */
+    --card: 0.99 0.004 100;
+    --card-foreground: 0.18 0.03 145;
+
+    /* Popover */
+    --popover: 0.99 0.004 100;
+    --popover-foreground: 0.18 0.03 145;
+
+    /* Primary: deep forest green */
+    --primary: 0.38 0.12 148;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: soft sage */
+    --secondary: 0.93 0.03 148;
+    --secondary-foreground: 0.3 0.08 148;
+
+    /* Muted: light warm gray */
+    --muted: 0.94 0.008 95;
+    --muted-foreground: 0.52 0.02 145;
+
+    /* Accent: warm amber */
+    --accent: 0.88 0.09 72;
+    --accent-foreground: 0.25 0.06 72;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border */
+    --border: 0.88 0.015 145;
+    --input: 0.88 0.015 145;
+    --ring: 0.38 0.12 148;
+
+    /* Success highlight */
+    --success: 0.72 0.13 148;
+    --success-foreground: 0.99 0 0;
+    --success-muted: 0.93 0.06 148;
+    --success-muted-foreground: 0.32 0.1 148;
+
+    /* Charts */
+    --chart-1: 0.5 0.16 148;
+    --chart-2: 0.6 0.13 72;
+    --chart-3: 0.45 0.14 200;
+    --chart-4: 0.7 0.1 30;
+    --chart-5: 0.65 0.1 320;
+
+    /* Sidebar */
+    --sidebar: 0.99 0.004 100;
+    --sidebar-foreground: 0.18 0.03 145;
+    --sidebar-primary: 0.38 0.12 148;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.93 0.03 148;
+    --sidebar-accent-foreground: 0.3 0.08 148;
+    --sidebar-border: 0.88 0.015 145;
+    --sidebar-ring: 0.38 0.12 148;
+  }
+
+  .dark {
+    --background: 0.14 0.02 145;
+    --foreground: 0.95 0.01 100;
+    --card: 0.18 0.025 145;
+    --card-foreground: 0.95 0.01 100;
+    --popover: 0.22 0.03 145;
+    --popover-foreground: 0.95 0.01 100;
+    --primary: 0.62 0.16 148;
+    --primary-foreground: 0.1 0.02 145;
+    --secondary: 0.25 0.04 145;
+    --secondary-foreground: 0.88 0.02 100;
+    --muted: 0.22 0.03 145;
+    --muted-foreground: 0.62 0.04 145;
+    --accent: 0.72 0.14 72;
+    --accent-foreground: 0.15 0.04 72;
+    --destructive: 0.65 0.22 25;
+    --destructive-foreground: 0.95 0.01 100;
+    --border: 0.28 0.04 145;
+    --input: 0.28 0.04 145;
+    --ring: 0.52 0.14 148;
+    --success: 0.55 0.15 148;
+    --success-foreground: 0.1 0.03 145;
+    --success-muted: 0.22 0.06 148;
+    --success-muted-foreground: 0.78 0.12 148;
+    --chart-1: 0.62 0.18 148;
+    --chart-2: 0.7 0.14 72;
+    --chart-3: 0.55 0.15 200;
+    --chart-4: 0.72 0.12 30;
+    --chart-5: 0.68 0.12 320;
+    --sidebar: 0.18 0.025 145;
+    --sidebar-foreground: 0.95 0.01 100;
+    --sidebar-primary: 0.62 0.16 148;
+    --sidebar-primary-foreground: 0.1 0.02 145;
+    --sidebar-accent: 0.25 0.04 145;
+    --sidebar-accent-foreground: 0.88 0.02 100;
+    --sidebar-border: 0.28 0.04 145;
+    --sidebar-ring: 0.52 0.14 148;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .success-cell {
+    background-color: oklch(var(--success-muted));
+    color: oklch(var(--success-muted-foreground));
+    font-weight: 600;
+  }
+
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-blend-mode: multiply;
+  }
+
+  .price-highlight {
+    position: relative;
+  }
+
+  .price-highlight::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 6px;
+    background-color: oklch(var(--success-muted));
+    z-index: 0;
+  }
+}
